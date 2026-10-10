@@ -37,12 +37,10 @@ void Gaussian_Elimination(vector<vector<double>>& matrix) {
     int totalColumns = matrix[0].size();
     int pivotRow = 0;
 
-    // Process coefficient columns, excluding the constant column
     for (int column = 0;
          column < totalColumns - 1 && pivotRow < rows;
          column++) {
 
-        // Find the row with the largest absolute pivot
         int best = pivotRow;
 
         for (int r = pivotRow + 1; r < rows; r++) {
@@ -52,15 +50,12 @@ void Gaussian_Elimination(vector<vector<double>>& matrix) {
             }
         }
 
-        // Skip a column if no usable pivot exists
         if (abs(matrix[best][column]) < EPS) {
             continue;
         }
 
-        // Swap the best pivot row into position
         swap(matrix[pivotRow], matrix[best]);
 
-        // Eliminate entries below the pivot
         for (int r = pivotRow + 1; r < rows; r++) {
             operation(matrix[pivotRow], matrix[r], column);
         }
@@ -104,7 +99,6 @@ vector<double> Back_Substitution(
             }
         }
 
-        // Check for an inconsistent equation: 0 = nonzero
         if (pivot == -1) {
             if (abs(matrix[i][variables]) > 1e-10) {
                 cout << "No solution exists.\n";
