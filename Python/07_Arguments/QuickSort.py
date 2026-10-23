@@ -36,9 +36,9 @@ class Quicksort:
 
 l = [random.randint(1, 10)for i in range(10)]
 
-
-q = Quicksort(l)
-q.display()
-q.startquick()
-q.display()
+#for testing the code 
+# q = Quicksort(l)
+# q.display()
+# q.startquick()
+# q.display()
          
