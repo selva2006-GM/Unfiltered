@@ -34,9 +34,9 @@ class Quicksort:
         print(self.ArrayList)
 
 
-l = [random.randint(1, 10)for i in range(10)]
-
 #for testing the code 
+# l = [random.randint(1, 10)for i in range(10)]
+
 # q = Quicksort(l)
 # q.display()
 # q.startquick()
